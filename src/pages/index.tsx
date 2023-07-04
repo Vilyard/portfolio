@@ -1,7 +1,13 @@
+import { About, Contact, Footer, Header, Projects } from "@/components";
+
 export default function Home() {
   return (
     <>
-      <div>Hello</div>
+      <Header />
+      <About />
+      <Contact />
+      <Projects />
+      <Footer />
     </>
   );
 }
