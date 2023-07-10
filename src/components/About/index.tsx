@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
+import { AboutContainer } from "@/styles";
 import { FC } from "react";
 
 export const About: FC = () => {
-  return <Box>Hello from About</Box>;
+  return <AboutContainer>Hello from About</AboutContainer>;
 };
