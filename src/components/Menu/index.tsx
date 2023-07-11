@@ -1,50 +1,29 @@
 import { NavbarButtons, StyledNavButton } from "@/styles";
-import { Menu, MenuItem } from "@mui/material";
-import { FC, ReactNode } from "react";
-
-interface MobileMenuProps {
-  open: boolean;
-  onClose: () => void;
-  children: ReactNode;
-}
+import { MenuItem } from "@mui/material";
+import { FC } from "react";
+import { MobileMenuProps } from "./types";
+import { StyledMenuContainer, StyledPopover } from "./Menu.styled";
 
 export const MobileMenu: FC<MobileMenuProps> = ({ open, onClose }) => {
   return (
-    <Menu
+    <StyledPopover
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={open}
       onClose={onClose}
+      disableRestoreFocus
     >
-      <NavbarButtons>
-        <MenuItem onClick={onClose}>
-          <StyledNavButton
-            disableElevation={true}
-            disableRipple={true}
-            variant="contained"
-          >
-            About
-          </StyledNavButton>
+      <StyledMenuContainer>
+        <MenuItem disableRipple>
+          <StyledNavButton variant="contained">About</StyledNavButton>
         </MenuItem>
-        <MenuItem onClick={onClose}>
-          <StyledNavButton
-            disableElevation={true}
-            disableRipple={true}
-            variant="contained"
-          >
-            Projects
-          </StyledNavButton>
+        <MenuItem disableRipple>
+          <StyledNavButton variant="contained">Projects</StyledNavButton>
         </MenuItem>
-        <MenuItem onClick={onClose}>
-          <StyledNavButton
-            disableElevation={true}
-            disableRipple={true}
-            variant="contained"
-          >
-            Contact
-          </StyledNavButton>
+        <MenuItem disableRipple>
+          <StyledNavButton variant="contained">Contact</StyledNavButton>
         </MenuItem>
-      </NavbarButtons>
-    </Menu>
+      </StyledMenuContainer>
+    </StyledPopover>
   );
 };

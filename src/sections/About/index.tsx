@@ -1,6 +1,6 @@
 import { AboutContainer } from "@/styles";
 import { FC } from "react";
 
-export const About: FC = () => {
+export const AboutSection: FC = () => {
   return <AboutContainer>Hello from About</AboutContainer>;
 };
