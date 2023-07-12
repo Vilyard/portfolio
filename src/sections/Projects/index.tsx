@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { FC } from "react";
 
-export const Projects: FC = () => {
+export const ProjectsSection: FC = () => {
   return <Box>Hello from Projects</Box>;
 };
