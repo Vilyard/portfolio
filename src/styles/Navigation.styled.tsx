@@ -6,7 +6,7 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { Close, Menu as MenuIcon } from "@mui/icons-material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 export const StyledMappedItemsButton = styled(Button)({
   color: "inherit",
 });

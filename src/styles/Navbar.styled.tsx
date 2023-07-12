@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Typography, styled } from "@mui/material";
+import { AppBar, Box, Button, styled } from "@mui/material";
 import NavLogo from "../assets/logo.png";
 export const StyledNavBox = styled(Box)({
   height: "100vh",

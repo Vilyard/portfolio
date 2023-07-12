@@ -1,14 +1,5 @@
 import { Close, Menu as MenuIcon } from "@mui/icons-material";
-import {
-  Box,
-  Dialog,
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Slide,
-  Menu,
-} from "@mui/material";
+import { Dialog, Toolbar, Slide, Menu } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC, useRef } from "react";
 import { INavigationProps } from "./types";
