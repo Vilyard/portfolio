@@ -5,11 +5,11 @@ export type TNavbarProps = {
   children: ReactNode;
 };
 
-export type TransitionProps = Omit<SlideProps, "children"> & {
+export type TTransitionProps = Omit<SlideProps, "children"> & {
   children?: ReactElement<any, any>;
 };
 
-export interface NavigationProps {
+export interface INavigationProps {
   isSmall: boolean;
   open: boolean;
   onCloseHandler: () => void;

@@ -1,7 +1,5 @@
 import {
-  AppBar,
   Box,
-  Button,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -11,6 +9,13 @@ import { FC, useState } from "react";
 import { Navigation } from "./navigation";
 import { TNavbarProps } from "./types";
 import Link from "next/link";
+import {
+  StyledNavBox,
+  StyledAppBar,
+  StyledNavNameContainer,
+} from "@/styles/Navbar.styled";
+// import NavLogo from "../../assets/logo.png";
+// import Image from "next/image";
 
 export const Navbar: FC<TNavbarProps> = ({ children }) => {
   const theme = useTheme();
@@ -21,16 +26,15 @@ export const Navbar: FC<TNavbarProps> = ({ children }) => {
   const onCloseHandler = () => setOpen(false);
 
   return (
-    <Box height="100vh">
-      <AppBar position="fixed" sx={{ background: "black" }}>
+    <StyledNavBox>
+      <StyledAppBar>
         <Toolbar>
-          <Box flexGrow={1}>
-            <Button color="inherit">
-              <Link href="#" passHref>
-                <Typography>Darko S.</Typography>
-              </Link>
-            </Button>
-          </Box>
+          <StyledNavNameContainer>
+            <Link href="#" passHref>
+              {/* <Image src={NavLogo} alt="Logo" width={80} height={80} /> */}
+              <Typography>Darko S.</Typography>
+            </Link>
+          </StyledNavNameContainer>
           <Box>
             <Navigation
               isSmall={isSmall}
@@ -40,9 +44,9 @@ export const Navbar: FC<TNavbarProps> = ({ children }) => {
             />
           </Box>
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
       <Toolbar />
       {children}
-    </Box>
+    </StyledNavBox>
   );
 };

@@ -1,6 +1,5 @@
 import { Close, Menu as MenuIcon } from "@mui/icons-material";
 import {
-  Button,
   Box,
   Dialog,
   AppBar,
@@ -12,12 +11,22 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC, useRef } from "react";
-import { NavigationProps } from "./types";
+import { INavigationProps } from "./types";
 import { navigationItems } from "./data";
+import {
+  StyledMappedItemsButton,
+  StyledMenuIcon,
+  StyledMenuItems,
+  StyledNavAppBar,
+  StyledNavIconButton,
+  StyledNavTypography,
+  StyledNavigationMobileContainer,
+  StyledNavigationMonitorContainer,
+} from "@/styles/Navigation.styled";
 
 const Transition = Slide;
 
-export const Navigation: FC<NavigationProps> = ({
+export const Navigation: FC<INavigationProps> = ({
   isSmall,
   open,
   onCloseHandler,
@@ -40,25 +49,26 @@ export const Navigation: FC<NavigationProps> = ({
   };
 
   const mappedItems = navigationItems.map(({ to, text }) => (
-    <Button
+    <StyledMappedItemsButton
       key={to}
-      sx={{ color: "inherit" }}
       size="large"
       fullWidth={isSmall}
       onClick={() => scrollToSection(to)}
       variant={router.asPath === `#${to}` ? "contained" : "text"}
     >
       {text}
-    </Button>
+    </StyledMappedItemsButton>
   ));
 
   return (
     <>
-      <Box display={{ xs: "none", sm: "block" }}>{mappedItems}</Box>
-      <Box display={{ xs: "block", sm: "none" }}>
-        <MenuIcon color="inherit" onClick={onOpenHandler}>
+      <StyledNavigationMonitorContainer>
+        {mappedItems}
+      </StyledNavigationMonitorContainer>
+      <StyledNavigationMobileContainer>
+        <StyledMenuIcon onClick={onOpenHandler}>
           <Menu open={true} />
-        </MenuIcon>
+        </StyledMenuIcon>
         <Dialog
           open={open}
           fullScreen
@@ -66,30 +76,19 @@ export const Navigation: FC<NavigationProps> = ({
           TransitionComponent={Transition}
           ref={scrollContainerRef}
         >
-          <AppBar
-            position="static"
-            sx={{ background: "white", color: "text.primary" }}
-          >
+          <StyledNavAppBar>
             <Toolbar>
-              <Typography variant="h5" sx={{ flexGrow: 1 }}>
-                Menu
-              </Typography>
-              <IconButton color="inherit" onClick={onCloseHandler}>
+              <StyledNavTypography variant="h5">Menu</StyledNavTypography>
+              <StyledNavIconButton onClick={onCloseHandler}>
                 <Close />
-              </IconButton>
+              </StyledNavIconButton>
             </Toolbar>
-          </AppBar>
-          <Box
-            display="flex"
-            flexDirection="column"
-            py={3}
-            width="100%"
-            ref={scrollContainerRef}
-          >
+          </StyledNavAppBar>
+          <StyledMenuItems py={3} ref={scrollContainerRef}>
             {mappedItems}
-          </Box>
+          </StyledMenuItems>
         </Dialog>
-      </Box>
+      </StyledNavigationMobileContainer>
     </>
   );
 };
