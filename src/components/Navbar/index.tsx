@@ -6,14 +6,11 @@ import {
   useTheme,
 } from "@mui/material";
 import { FC, useState } from "react";
-import { Navigation } from "./navigation";
 import { TNavbarProps } from "./types";
 import Link from "next/link";
-import {
-  StyledNavBox,
-  StyledAppBar,
-  StyledNavNameContainer,
-} from "@/styles/Navbar.styled";
+import { StyledNavBox, StyledAppBar, StyledNavNameContainer } from "@/styles";
+import { Navigation } from "../NavigationMenu";
+
 // import NavLogo from "../../assets/logo.png";
 // import Image from "next/image";
 
