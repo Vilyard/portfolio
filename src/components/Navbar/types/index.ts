@@ -9,9 +9,3 @@ export type TTransitionProps = Omit<SlideProps, "children"> & {
   children?: ReactElement<any, any>;
 };
 
-export interface INavigationProps {
-  isSmall: boolean;
-  open: boolean;
-  onCloseHandler: () => void;
-  onOpenHandler: () => void;
-}

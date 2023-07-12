@@ -6,14 +6,14 @@ import { INavigationProps } from "./types";
 import { navigationItems } from "./data";
 import {
   StyledMappedItemsButton,
-  StyledMenuIcon,
-  StyledMenuItems,
-  StyledNavAppBar,
-  StyledNavIconButton,
-  StyledNavTypography,
-  StyledNavigationMobileContainer,
   StyledNavigationMonitorContainer,
-} from "@/styles/Navigation.styled";
+  StyledNavigationMobileContainer,
+  StyledMenuIcon,
+  StyledNavAppBar,
+  StyledNavTypography,
+  StyledNavIconButton,
+  StyledMenuItems,
+} from "@/styles";
 
 const Transition = Slide;
 
