@@ -8,39 +8,63 @@ import {
   StyledAboutMappedText,
   StyledAboutParagraph,
   StyledAboutMappedImage,
+  StyledAboutMapped,
+  StyledAboutText,
 } from "@/styles";
-import { Box } from "@mui/material";
 import { FC } from "react";
 import { aboutItems } from "./data";
 import Image from "next/image";
 import { LABELS, aboutSectionText } from "./utils";
+import { useRouter } from "next/router";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LaunchIcon from "@mui/icons-material/Launch";
+import { useTheme } from "@mui/material";
 
 export const AboutSection: FC = () => {
+  const theme = useTheme();
+  const router = useRouter();
+
+  const handleFirstButton = () => {
+    router.push("");
+  };
+
+  const handleSecondButton = () => {
+    router.push("");
+  };
+
   const mappedData = aboutItems.map(({ logoSrc, text, id, altText }) => (
     <StyledAboutMappedData key={id}>
       <StyledAboutMappedImage>
-        <Image src={logoSrc} alt={altText} />
+        <Image height={80} width={80} src={logoSrc} alt={altText} />
       </StyledAboutMappedImage>
       <StyledAboutMappedContent>
         <StyledAboutMappedText>{text}</StyledAboutMappedText>
       </StyledAboutMappedContent>
       <StyledAboutMappedActions>
-        <StyledAboutMappedButtons>
-          {LABELS.FirstMappedButton}
+        <StyledAboutMappedButtons
+          disableRipple={true}
+          onClick={handleFirstButton}
+        >
+          <GitHubIcon />
+          {/* {LABELS.FirstMappedButton} */}
         </StyledAboutMappedButtons>
-        <StyledAboutMappedButtons>
-          {LABELS.SecondMappedBbutton}
+        <StyledAboutMappedButtons
+          disableRipple={true}
+          onClick={handleSecondButton}
+        >
+          <LaunchIcon />
+          {/* {LABELS.SecondMappedBbutton} */}
         </StyledAboutMappedButtons>
       </StyledAboutMappedActions>
     </StyledAboutMappedData>
   ));
   return (
-    <AboutContainer>
-      <Box>
+    <AboutContainer theme={theme}>
+      <StyledAboutText>
         <StyledAboutHeading>{LABELS.overview}</StyledAboutHeading>
         <StyledAboutParagraph>{aboutSectionText}</StyledAboutParagraph>
-      </Box>
-      <Box>{mappedData}</Box>
+      </StyledAboutText>
+      <StyledAboutMapped>{mappedData}</StyledAboutMapped>
     </AboutContainer>
   );
 };
