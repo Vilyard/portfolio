@@ -35,7 +35,7 @@ export const AboutSection: FC = () => {
   const mappedData = aboutItems.map(({ logoSrc, text, id, altText }) => (
     <StyledAboutMappedData key={id}>
       <StyledAboutMappedImage>
-        <Image height={40} width={40} src={logoSrc} alt={altText} />
+        <Image fill={true} src={logoSrc} alt={altText} />
       </StyledAboutMappedImage>
       <StyledAboutMappedContent>
         <StyledAboutMappedText>{text}</StyledAboutMappedText>

@@ -21,10 +21,8 @@ export const StyledAboutParagraph = styled(Typography)({});
 export const StyledAboutMappedData = styled(Card)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
-  whiteSpace: "nowrap",
   padding: 20,
   border: "2px solid black",
-  position: "relative",
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
