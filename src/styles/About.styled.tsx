@@ -23,6 +23,7 @@ export const StyledAboutMappedData = styled(Card)(({ theme }) => ({
   flexDirection: "row",
   whiteSpace: "nowrap",
   padding: 20,
+  border: "2px solid black",
   position: "relative",
   alignItems: "center",
   justifyContent: "center",
@@ -34,8 +35,7 @@ export const StyledAboutMappedData = styled(Card)(({ theme }) => ({
 }));
 
 export const StyledAboutMappedImage = styled(Box)({
-  border: "2px solid gray",
-  width: "100%",
+  padding: "20px",
   position: "relative",
 });
 
@@ -60,12 +60,16 @@ export const StyledAboutMappedActions = styled(CardActions)({
   padding: "22px",
 });
 
-export const StyledAboutMapped = styled(Box)({
+export const StyledAboutMapped = styled(Box)(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
+  flexDirection: "row",
   gap: 25,
   width: "100%",
-});
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    width: "100%",
+  },
+}));
 
 export const StyledAboutText = styled(Box)({
   display: "flex",

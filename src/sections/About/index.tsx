@@ -35,27 +35,25 @@ export const AboutSection: FC = () => {
   const mappedData = aboutItems.map(({ logoSrc, text, id, altText }) => (
     <StyledAboutMappedData key={id}>
       <StyledAboutMappedImage>
-        <Image height={80} width={80} src={logoSrc} alt={altText} />
+        <Image height={40} width={40} src={logoSrc} alt={altText} />
       </StyledAboutMappedImage>
       <StyledAboutMappedContent>
         <StyledAboutMappedText>{text}</StyledAboutMappedText>
       </StyledAboutMappedContent>
-      <StyledAboutMappedActions>
+      {/* <StyledAboutMappedActions>
         <StyledAboutMappedButtons
           disableRipple={true}
           onClick={handleFirstButton}
         >
           <GitHubIcon />
-          {/* {LABELS.FirstMappedButton} */}
         </StyledAboutMappedButtons>
         <StyledAboutMappedButtons
           disableRipple={true}
           onClick={handleSecondButton}
         >
           <LaunchIcon />
-          {/* {LABELS.SecondMappedBbutton} */}
         </StyledAboutMappedButtons>
-      </StyledAboutMappedActions>
+      </StyledAboutMappedActions> */}
     </StyledAboutMappedData>
   ));
   return (

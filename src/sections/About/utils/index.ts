@@ -12,6 +12,4 @@ export const aboutSectionText = `
 
 export const LABELS = {
     overview: 'A Brief Overview',
-    FirstMappedButton : 'Share',
-    SecondMappedBbutton: 'Learn More'
 } as const
