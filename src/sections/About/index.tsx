@@ -1,39 +1,68 @@
 import {
   AboutContainer,
   StyledAboutHeading,
+  StyledAboutMappedActions,
+  StyledAboutMappedButtons,
+  StyledAboutMappedContent,
   StyledAboutMappedData,
-  StyledAboutMappedImage,
   StyledAboutMappedText,
   StyledAboutParagraph,
+  StyledAboutMappedImage,
+  StyledAboutMapped,
+  StyledAboutText,
 } from "@/styles";
-import { Box } from "@mui/material";
 import { FC } from "react";
 import { aboutItems } from "./data";
+import Image from "next/image";
+import { LABELS, aboutSectionText } from "./utils";
+import { useRouter } from "next/router";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LaunchIcon from "@mui/icons-material/Launch";
+import { useTheme } from "@mui/material";
 
 export const AboutSection: FC = () => {
-  const mappedData = aboutItems.map(({ image, text, id }) => (
+  const theme = useTheme();
+  const router = useRouter();
+
+  const handleFirstButton = () => {
+    router.push("");
+  };
+
+  const handleSecondButton = () => {
+    router.push("");
+  };
+
+  const mappedData = aboutItems.map(({ logoSrc, text, id, altText }) => (
     <StyledAboutMappedData key={id}>
-      <StyledAboutMappedImage>{image}</StyledAboutMappedImage>
-      <StyledAboutMappedText>{text}</StyledAboutMappedText>
+      <StyledAboutMappedImage>
+        <Image fill={true} src={logoSrc} alt={altText} />
+      </StyledAboutMappedImage>
+      <StyledAboutMappedContent>
+        <StyledAboutMappedText>{text}</StyledAboutMappedText>
+      </StyledAboutMappedContent>
+      {/* <StyledAboutMappedActions>
+        <StyledAboutMappedButtons
+          disableRipple={true}
+          onClick={handleFirstButton}
+        >
+          <GitHubIcon />
+        </StyledAboutMappedButtons>
+        <StyledAboutMappedButtons
+          disableRipple={true}
+          onClick={handleSecondButton}
+        >
+          <LaunchIcon />
+        </StyledAboutMappedButtons>
+      </StyledAboutMappedActions> */}
     </StyledAboutMappedData>
   ));
   return (
-    <AboutContainer>
-      <Box>
-        <StyledAboutHeading>A Brief Overview</StyledAboutHeading>
-        <StyledAboutParagraph>
-          As a skilled junior software developer, I bring a wealth of experience
-          in JavaScript, React, and Node.js, and my thirst for knowledge is
-          insatiable. I&apos;m currently diving into the dynamic world of
-          Typescript, further elevating my skill set. I find immense joy in
-          collaborating closely with clients to tackle real-world challenges and
-          create delightful user experiences. Let&apos;s embark on an exciting
-          journey together, transforming your vision into a reality. Join me as
-          we unlock new possibilities and take my development skills to new
-          heights!
-        </StyledAboutParagraph>
-      </Box>
-      <Box>{mappedData}</Box>
+    <AboutContainer theme={theme}>
+      <StyledAboutText>
+        <StyledAboutHeading>{LABELS.overview}</StyledAboutHeading>
+        <StyledAboutParagraph>{aboutSectionText}</StyledAboutParagraph>
+      </StyledAboutText>
+      <StyledAboutMapped>{mappedData}</StyledAboutMapped>
     </AboutContainer>
   );
 };

@@ -43,6 +43,7 @@ export const Navigation: FC<INavigationProps> = ({
     <StyledMappedItemsButton
       key={to}
       size="large"
+      disableRipple={true}
       fullWidth={isSmall}
       onClick={() => scrollToSection(to)}
       variant={router.asPath === `#${to}` ? "contained" : "text"}
