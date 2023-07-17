@@ -1,42 +1,55 @@
+import JavaScriptLogo from '../../../assets/javascript-logo.png'
+import ReactJSLogo from '../../../assets/react-logo.png'
+import NodejsLogo from '../../../assets/nodejs-logo.png'
+import TypescriptLogo from '../../../assets/typescript-logo.png'
+
 export const TEXT = [
 {
         name:'JavaScript',
+        logoSrc:JavaScriptLogo,
+        altText: 'JavaScriptLogo',
         description: [
-                'Universal Language for the Web: JavaScript is the de facto programming language for web development, running on all modern web browsers and enabling interactive and dynamic functionality.',
-                'Versatility: JavaScript is a versatile language that can be used for both frontend and backend development. It allows for building web applications, server-side applications, mobile apps, and even desktop applications.',
-                'Extensive Libraries and Frameworks: JavaScript has a vast ecosystem of libraries and frameworks, such as React, Angular, and Vue.js, which provide powerful tools and utilities for building sophisticated applications.',
-                'Asynchronous Programming: JavaScripts event-driven, non-blocking nature makes it well-suited for handling asynchronous operations, enabling the creation of responsive and efficient applications.',
-                'Large Developer Community: JavaScript has one of the largest developer communities, which contributes to its ongoing innovation, support, and the availability of learning resources.',
+            'Universal language for web development, running on all modern browsers.',
+            'Versatile for both frontend and backend development.',
+            'Vast ecosystem of libraries and frameworks like React, Angular, and Vue.js.',
+            'Efficient handling of asynchronous operations for responsive applications.',
+            'Large developer community for ongoing innovation and support.',
         ] ,
     },
 {
         name:'ReactJS',
+        logoSrc:ReactJSLogo,
+        altText: 'ReactJSLogo',
         description: [
-            'Component-Based Architecture: ReactJS follows a component-based architecture, allowing developers to build reusable UI components that encapsulate their logic and UI state, resulting in modular and maintainable code.',
-            'Virtual DOM: ReactJS utilizes a virtual DOM, which optimizes the updating and rendering of components, leading to improved performance and a smoother user experience.',
-            'Declarative Syntax: ReactJS employs a declarative syntax, enabling developers to describe how the UI should look based on its state, abstracting away the complexities of manually manipulating the DOM.',
-            'Reusability: ReactJS promotes code reusability, as components can be easily composed and reused in different parts of an application, reducing duplication and improving development efficiency.',
-            'Vibrant Ecosystem: ReactJS has a vibrant ecosystem with a wide range of third-party libraries, tools, and community support, providing developers with extensive resources and options to enhance their React applications.',
+            'Component-based architecture for reusable UI components.',
+            'Virtual DOM for optimized performance and smoother user experience.',
+            'Declarative syntax for abstracting complexities of manipulating the DOM.',
+            'Promotes code reusability and development efficiency.',
+            'Vibrant ecosystem with extensive resources and options.',
     ] ,
     },
     {
         name:'NodeJS',
+        logoSrc:NodejsLogo,
+        altText: 'NodejsLogo',
         description: [
-            'JavaScript on the Server-Side: Node.js allows developers to run JavaScript code on the server-side, enabling full-stack JavaScript development and leveraging a single language across the entire application stack.',
-            'Asynchronous and Non-Blocking I/O: Node.js utilizes an event-driven, non-blocking I/O model, making it highly efficient and scalable for handling concurrent requests and I/O operations.',
-            'Extensive Module Ecosystem: Node.js has a vast ecosystem of open-source modules available through npm (Node Package Manager), which allows developers to easily integrate and reuse existing code and libraries.',
-            'Server-Side Applications and APIs: Node.js excels at building scalable and high-performance server-side applications, making it well-suited for developing web servers, RESTful APIs, real-time applications, and microservices.',
-            'Community and Support: Node.js has a large and active community, providing ample resources, documentation, and support. It offers a thriving ecosystem of tools, frameworks (such as Express.js), and community-driven modules that facilitate development.',
+            'JavaScript on the server-side for full-stack development.',
+            'Efficient and scalable with event-driven, non-blocking I/O model.',
+            'Extensive module ecosystem through npm for code integration and reuse.',
+            'Ideal for server-side applications, APIs, and real-time applications.',
+            'Active community and support with thriving ecosystem of tools and modules.',
     ] ,
     },
   {
         name: "Typescript",
+        logoSrc:TypescriptLogo,
+        altText: 'TypescriptLogo',
         description: [
-            'Static Type Checking: TypeScript adds static type checking to JavaScript, helping catch potential errors during development and improving code reliability.',
-            'Enhanced Tooling Support: TypeScript provides advanced IDE support, including autocompletion, type inference, and refactoring tools, making development more efficient and productive.',
-            'Improved Code Readability and Maintainability: With its explicit type annotations and clear interfaces, TypeScript enhances code readability and makes it easier to understand and maintain.',
-            'Large Ecosystem and Community: TypeScript has a thriving ecosystem with a wide range of libraries, frameworks, and tools built specifically for TypeScript, and it boasts a strong and active community.',
-            'Seamless JavaScript Integration: TypeScript is a superset of JavaScript, allowing developers to gradually introduce it into existing JavaScript projects and leverage their existing knowledge and codebase.',
+            'Static type checking for catching potential errors during development.',
+            'Enhanced tooling support for efficient IDE integration.',
+            'Improved code readability and maintainability with explicit types and interfaces.',
+            'Large ecosystem and community with dedicated TypeScript libraries and tools.',
+            'Seamless integration with existing JavaScript projects for gradual adoption.',
     ] ,
     },
   
@@ -44,4 +57,4 @@ export const TEXT = [
 
 export const LABELS = {
     overview: 'Lets dive into the technologies that I use:  '
-}
+} as const
