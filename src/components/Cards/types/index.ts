@@ -5,6 +5,7 @@ export interface ICards {
     logoSrc: StaticImageData;
     altText: string;
     text: string;
+    link?:string,
 }
 
 export interface ICardsProps {

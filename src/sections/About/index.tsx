@@ -20,7 +20,6 @@ export const AboutSection: FC = () => {
         <StyledAboutHeading>{LABELS.overview}</StyledAboutHeading>
         <StyledAboutParagraph>{aboutSectionText}</StyledAboutParagraph>
       </StyledAboutText>
-
       <StyledAboutMapped>
         <Cards items={aboutItems} showActions={false} />
       </StyledAboutMapped>
