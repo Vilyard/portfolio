@@ -9,7 +9,7 @@ import { FC } from "react";
 import { aboutItems } from "./data";
 import { LABELS, aboutSectionText } from "./utils";
 import { useTheme } from "@mui/material";
-import { Cards } from "@/components";
+import { AboutCards } from "@/components";
 
 export const AboutSection: FC = () => {
   const theme = useTheme();
@@ -21,7 +21,7 @@ export const AboutSection: FC = () => {
         <StyledAboutParagraph>{aboutSectionText}</StyledAboutParagraph>
       </StyledAboutText>
       <StyledAboutMapped>
-        <Cards items={aboutItems} showActions={false} />
+        <AboutCards items={aboutItems} />
       </StyledAboutMapped>
     </AboutContainer>
   );

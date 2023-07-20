@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export interface ICards {
+export interface IProjectsCards {
     id: number;
     logoSrc: StaticImageData;
     altText: string;
@@ -8,7 +8,6 @@ export interface ICards {
     link?:string,
 }
 
-export interface ICardsProps {
-    items: ICards[]
-    showActions: boolean
+export interface IProjectsCardsProps {
+    items: IProjectsCards[]
 }

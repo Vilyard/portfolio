@@ -1,4 +1,4 @@
-import { Cards } from "@/components";
+import { ProjectCards } from "@/components";
 import {
   StyledProjectsCardContainer,
   StyledProjectsContainer,
@@ -7,13 +7,15 @@ import {
 import { FC } from "react";
 import { projectsItems } from "./data";
 import { LABELS } from "./utils";
+import { useTheme } from "@mui/material";
 
 export const ProjectsSection: FC = () => {
+  const theme = useTheme();
   return (
-    <StyledProjectsContainer>
+    <StyledProjectsContainer theme={theme}>
       <StyledProjectsText>{LABELS.intro}</StyledProjectsText>
       <StyledProjectsCardContainer>
-        <Cards items={projectsItems} showActions={true} />
+        <ProjectCards items={projectsItems} />
       </StyledProjectsCardContainer>
     </StyledProjectsContainer>
   );
