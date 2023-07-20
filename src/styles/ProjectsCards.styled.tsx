@@ -16,6 +16,7 @@ export const StyledProjectsCardData = styled(Card)({
   alignItems: "center",
   justifyContent: "center",
   width: "100%",
+  position: "relative",
 });
 
 export const StyledProjectsCardDataImage = styled(Box)({
@@ -26,20 +27,22 @@ export const StyledProjectsCardDataImage = styled(Box)({
 export const StyledProjectsCardDataActions = styled(CardActions)({
   display: "flex",
   flexDirection: "row",
-  justifyContent: "center",
-  textDecoration: "none",
+  justifyContent: "flex-end",
   position: "absolute",
   top: 0,
   right: 0,
-  padding: "22px",
 });
 
 export const StyledProjectsCardDataButtons = styled(IconButton)({
-  padding: "4px",
-  marginLeft: "4px",
-  color: "cyan",
+  padding: 0,
+  margin: "0 auto",
 });
 
 export const StyledProjectsCardDataText = styled(Typography)({});
 
-export const StyledProjectsCardDataContent = styled(CardContent)({});
+export const StyledProjectsCardDataContent = styled(CardContent)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+});

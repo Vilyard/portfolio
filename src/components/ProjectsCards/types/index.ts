@@ -5,7 +5,8 @@ export interface IProjectsCards {
     logoSrc: StaticImageData;
     altText: string;
     text: string;
-    link?:string,
+    githubLink:string,
+    liveSiteLink: string,
 }
 
 export interface IProjectsCardsProps {
