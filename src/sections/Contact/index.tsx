@@ -1,6 +1,13 @@
-import { Box } from "@mui/material";
+import { CustomForm } from "@/components";
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
+import { LABELS } from "./utils/labels";
 
 export const ContactSection: FC = () => {
-  return <Box>Hello from Contact</Box>;
+  return (
+    <Box>
+      <Typography>{LABELS.introLabel}</Typography>
+      <CustomForm />
+    </Box>
+  );
 };
