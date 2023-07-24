@@ -9,7 +9,6 @@ export const CustomInputFields: FC<ICustomInputFields> = ({
   label,
   control,
   multiline = false,
-  maxRows,
 }) => {
   const { field } = useController({
     name: id,
