@@ -5,4 +5,6 @@ export interface ICustomInputFields {
     variant: 'standard'|'outlined'|'filled',
     label: string,
     control: Control
+    multiline?: boolean;
+    maxRows?: number; 
 }

@@ -5,7 +5,7 @@ import { LABELS } from "./utils/labels";
 
 export const ContactSection: FC = () => {
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}>
       <Typography>{LABELS.introLabel}</Typography>
       <CustomForm />
     </Box>
