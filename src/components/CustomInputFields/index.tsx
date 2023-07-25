@@ -1,4 +1,4 @@
-import { StyledInputField, StyledTextAutosize } from "@/styles";
+import { StyledInputField } from "@/styles";
 import { FC } from "react";
 import { ICustomInputFields } from "./types";
 import { useController } from "react-hook-form";
@@ -8,7 +8,7 @@ export const CustomInputFields: FC<ICustomInputFields> = ({
   variant,
   label,
   control,
-  multiline = false,
+  multiline,
 }) => {
   const { field } = useController({
     name: id,

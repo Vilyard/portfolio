@@ -6,5 +6,4 @@ export interface ICustomInputFields {
     label: string,
     control: Control
     multiline?: boolean;
-    maxRows?: number; 
 }

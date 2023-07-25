@@ -6,4 +6,5 @@ export const LABELS = {
     nameLabel: 'Name',
     emailLabel: 'Email',
     msgLabel:'Message',
+    btnSubmit: 'Submit',
 }

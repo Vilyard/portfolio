@@ -1,42 +1,23 @@
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import { FC } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { CustomInputFields } from "../CustomInputFields";
 import { LABELS } from "./utils/labels";
-import { CustomFormContainer } from "@/styles";
+import { CustomFormContainer, CustomFormInputFieldsContainer } from "@/styles";
+import { inputFields } from "./data";
 
 export const CustomForm: FC = () => {
   const methods = useForm();
   const onSubmit = (data: any) => {
     console.log(data);
   };
-  const inputFields = [
-    {
-      id: LABELS.nameId,
-      label: LABELS.nameLabel,
-    },
-    {
-      id: LABELS.emailId,
-      label: LABELS.emailLabel,
-    },
-    {
-      id: LABELS.msgId,
-      label: LABELS.msgLabel,
-      multiline: true,
-    },
-  ];
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={onSubmit}>
         <CustomFormContainer>
           {inputFields.map((field, i) => (
-            <Box
-              key={i}
-              sx={{
-                padding: 2,
-              }}
-            >
+            <CustomFormInputFieldsContainer key={i}>
               <CustomInputFields
                 key={field.id}
                 id={field.id}
@@ -45,7 +26,7 @@ export const CustomForm: FC = () => {
                 variant="outlined"
                 multiline={field.multiline}
               />
-            </Box>
+            </CustomFormInputFieldsContainer>
           ))}
           <Button
             variant="contained"
@@ -54,7 +35,7 @@ export const CustomForm: FC = () => {
             disableFocusRipple={true}
             type="submit"
           >
-            Submit
+            {LABELS.btnSubmit}
           </Button>
         </CustomFormContainer>
       </form>
