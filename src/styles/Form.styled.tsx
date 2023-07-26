@@ -8,8 +8,11 @@ export const CustomFormContainer = styled(Box)({
   padding: 30,
 });
 
-export const CustomFormInputFieldsContainer = styled(Box)({
+export const CustomFormInputFieldsContainer = styled(Box)(({ theme }) => ({
   padding: 20,
   display: "flex",
   width: "50%",
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+  },
+}));
