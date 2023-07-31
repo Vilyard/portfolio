@@ -1,5 +1,4 @@
-import { SectionContainer } from "@/components";
-import { Navbar } from "@/components/Navbar";
+import { Footer, Navbar, SectionContainer } from "@/components";
 import {
   IntroSection,
   AboutSection,
@@ -7,8 +6,9 @@ import {
   ProjectsSection,
   ContactSection,
 } from "@/sections";
-import { StyledHome } from "@/styles";
+import { StyledHome, theme } from "@/styles";
 import { SectionIdEnum } from "@/types";
+import { ThemeProvider } from "@mui/material";
 
 const sections = [
   {
@@ -35,16 +35,19 @@ const sections = [
 
 export default function Home() {
   return (
-    <StyledHome>
-      <Navbar>
-        {sections.map(({ component, sectionId }) => {
-          return (
-            <SectionContainer key={sectionId} sectionId={sectionId}>
-              {component}
-            </SectionContainer>
-          );
-        })}
-      </Navbar>
-    </StyledHome>
+    <ThemeProvider theme={theme}>
+      <StyledHome>
+        <Navbar>
+          {sections.map(({ component, sectionId }) => {
+            return (
+              <SectionContainer key={sectionId} sectionId={sectionId}>
+                {component}
+              </SectionContainer>
+            );
+          })}
+        </Navbar>
+        <Footer />
+      </StyledHome>
+    </ThemeProvider>
   );
 }
