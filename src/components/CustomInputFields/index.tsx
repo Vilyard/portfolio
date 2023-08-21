@@ -22,6 +22,7 @@ export const CustomInputFields: FC<ICustomInputFields> = ({
       variant={variant}
       id={id}
       label={label}
+      InputLabelProps={{ shrink: true }}
       multiline={multiline}
     />
   );

@@ -11,8 +11,8 @@ import Link from "next/link";
 import { StyledNavBox, StyledAppBar, StyledNavNameContainer } from "@/styles";
 import { Navigation } from "../NavigationMenu";
 
-// import NavLogo from "../../assets/logo.png";
-// import Image from "next/image";
+import NavLogo from "../../assets/logo.png";
+import Image from "next/image";
 
 export const Navbar: FC<TNavbarProps> = ({ children }) => {
   const theme = useTheme();
@@ -28,8 +28,7 @@ export const Navbar: FC<TNavbarProps> = ({ children }) => {
         <Toolbar>
           <StyledNavNameContainer>
             <Link href="#" passHref>
-              {/* <Image src={NavLogo} alt="Logo" width={80} height={80} /> */}
-              <Typography>Darko S.</Typography>
+              <Image src={NavLogo} alt="Logo" width={80} height={80} />
             </Link>
           </StyledNavNameContainer>
           <Box>

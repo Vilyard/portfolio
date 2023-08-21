@@ -4,6 +4,7 @@ export const CustomFormContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  border: "2px solid black",
   alignItems: "center",
   padding: 30,
 });

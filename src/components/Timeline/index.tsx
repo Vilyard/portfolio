@@ -35,8 +35,7 @@ export const TimelineComponent: FC<ITimelineComponentProps> = ({ items }) => {
               <Image width={30} height={30} src={logoSrc} alt={altText} />
             )}
           </StyledTimelineLogoDot>
-          {!isMobile}
-          <TimelineConnector />
+          {isMobile ? <TimelineConnector /> : null}
         </StyledTimelineSeparator>
         <StyledTimelineContent>
           <StyledSkillMappedData>
